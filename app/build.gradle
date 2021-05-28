@@ -1,7 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 30
@@ -47,10 +47,18 @@ dependencies {
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit2"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofitRxJava3Adapter"
     implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid"
     implementation "io.reactivex.rxjava3:rxjava:$rxJava"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModel"
     implementation "androidx.fragment:fragment-ktx:$ktx"
+    implementation "com.google.dagger:hilt-android:$hilt"
+    implementation "com.google.dagger:hilt-android-compiler:$hilt"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModel"
+    implementation "androidx.hilt:hilt-compiler:$hiltViewModel"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor"
+
+    kapt("com.google.dagger:hilt-android-compiler:$hilt")
 
 
     testImplementation 'junit:junit:4.+'
