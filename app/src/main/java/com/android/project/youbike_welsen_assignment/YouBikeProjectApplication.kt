@@ -5,7 +5,4 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class YouBikeProjectApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-    }
 }
