@@ -3,6 +3,6 @@
 
     <string name="app_name">YouBike_Welsen_Assignment</string>
     <string name="youBike_location">地點</string>
-    <string name="youBike_total">總數量: </string>
+    <string name="youBike_total">總數量 </string>
     <string name="youBike_left">剩餘數量</string>
 </resources>

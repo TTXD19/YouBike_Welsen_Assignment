@@ -22,8 +22,8 @@
             android:layout_marginBottom="16dp"
             android:text="@string/youBike_total"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_item_youBike_total_value"
@@ -40,66 +40,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/youBike_location"
             android:layout_marginTop="5dp"
+            android:text="@string/youBike_location"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_item_youBike_location_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_item_youBike_location"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_location"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
             tools:text="Xizhi Railway Station" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_bike"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/ic_pedal_bike_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_youBike_left"
+            app:layout_constraintEnd_toStartOf="@+id/li_left_bike"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_item_youBike_left"
+        <LinearLayout
+            android:id="@+id/li_left_bike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/youBike_left"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_youBike_left_number"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_item_youBike_left_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/youBike_left"
-            android:textSize="36sp"
-            android:textColor="@color/black"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="20" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_item_youBike_left_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/youBike_left"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                tools:text="20" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_item_youBike_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/youBike_left"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
