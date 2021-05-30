@@ -19,8 +19,9 @@ class MainActivityViewModel @Inject constructor(
     val youBikeData = MutableLiveData<List<YouBikeResp>>()
 
     fun getData() {
-        youBikeRepository.getYouBikeInform().subscribeBy {
-            youBikeData.postValue(it)
+        youBikeRepository.getYouBikeInform().subscribeBy { data ->
+            //date.sortedBy { it.date }
+            youBikeData.postValue(data.sortedByDescending { it.date })
         }
     }
 }

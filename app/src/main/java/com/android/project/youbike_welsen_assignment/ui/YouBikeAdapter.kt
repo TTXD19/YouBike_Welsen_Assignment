@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.project.youbike_welsen_assignment.data.data_class.YouBikeResp
 import com.android.project.youbike_welsen_assignment.databinding.ItemYouBikeInfoBinding
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder>(
     YouBikeDiffCallBack()
@@ -24,6 +27,7 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
         holder.tvLocation.text = data.location
         holder.tvTotal.text = data.totalBikes
         holder.tvRemain.text = data.remainBikes
+        holder.tvDate.text = data.date?.convertTimeFormat("yyyyMMddHHmmss", "yyyy/MM/dd HH:mm:ss")
     }
 
 
@@ -33,6 +37,7 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
         val tvLocation = binding.tvItemYouBikeLocationValue
         val tvTotal = binding.tvItemYouBikeTotalValue
         val tvRemain = binding.tvItemYouBikeLeftNumber
+        val tvDate = binding.tvItemYouBikeDateValue
     }
 
     class YouBikeDiffCallBack : DiffUtil.ItemCallback<YouBikeResp>() {
@@ -43,6 +48,17 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
 
         override fun areContentsTheSame(oldItem: YouBikeResp, newItem: YouBikeResp): Boolean {
             return oldItem == newItem
+        }
+    }
+
+    fun String.convertTimeFormat(original: String, converted: String): String {
+        val sdf = SimpleDateFormat(original, Locale.TAIWAN)
+        val originDate = sdf.parse(this) ?: return ""
+        sdf.applyPattern(converted)
+        return try {
+            sdf.format(originDate)
+        } catch (e: ParseException) {
+            ""
         }
     }
 }

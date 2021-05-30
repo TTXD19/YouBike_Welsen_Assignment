@@ -8,5 +8,7 @@ data class YouBikeResp(
     @SerializedName("tot")
     val totalBikes: String? = null,
     @SerializedName("sbi")
-    val remainBikes: String? = null
+    val remainBikes: String? = null,
+    @SerializedName("mday")
+    val date: String? = null
 )
