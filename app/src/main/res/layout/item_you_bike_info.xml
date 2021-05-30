@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="8dp"
     android:elevation="5dp"
     app:cardCornerRadius="12dp">
 
@@ -21,6 +22,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/youBike_total"
+            android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,10 +31,11 @@
             android:id="@+id/tv_item_youBike_total_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_item_youBike_total"
-            app:layout_constraintStart_toEndOf="@+id/tv_item_youBike_total"
-            app:layout_constraintTop_toTopOf="@+id/tv_item_youBike_total"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_youBike_total"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total"
             tools:text="30" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -42,15 +45,17 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:text="@string/youBike_location"
+            android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total_value" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_item_youBike_location_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +69,7 @@
             android:layout_height="36dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_pedal_bike_24"
+            android:tint="@color/gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/li_left_bike"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,9 +77,13 @@
         <LinearLayout
             android:id="@+id/li_left_bike"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginVertical="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@color/gray"
+            android:gravity="center_vertical"
             android:orientation="vertical"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -84,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/youBike_left"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 tools:text="20" />
@@ -95,7 +105,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/youBike_left"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="8dp"
                 android:textSize="15sp" />
 
         </LinearLayout>
