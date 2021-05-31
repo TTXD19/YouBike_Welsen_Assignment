@@ -1,12 +1,9 @@
 package com.android.project.youbike_welsen_assignment.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewbinding.ViewBinding
-import com.android.project.youbike_welsen_assignment.R
 import com.android.project.youbike_welsen_assignment.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -31,7 +31,7 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
     }
 
 
-    inner class YouBikeViewHolder(private val binding: ItemYouBikeInfoBinding) :
+    inner class YouBikeViewHolder(binding: ItemYouBikeInfoBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         val tvLocation = binding.tvItemYouBikeLocationValue
@@ -43,7 +43,7 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
     class YouBikeDiffCallBack : DiffUtil.ItemCallback<YouBikeResp>() {
 
         override fun areItemsTheSame(oldItem: YouBikeResp, newItem: YouBikeResp): Boolean {
-            return oldItem.location == newItem.location
+            return oldItem.sno == newItem.sno
         }
 
         override fun areContentsTheSame(oldItem: YouBikeResp, newItem: YouBikeResp): Boolean {
@@ -51,7 +51,7 @@ class YouBikeAdapter : ListAdapter<YouBikeResp, YouBikeAdapter.YouBikeViewHolder
         }
     }
 
-    fun String.convertTimeFormat(original: String, converted: String): String {
+    private fun String.convertTimeFormat(original: String, converted: String): String {
         val sdf = SimpleDateFormat(original, Locale.TAIWAN)
         val originDate = sdf.parse(this) ?: return ""
         sdf.applyPattern(converted)

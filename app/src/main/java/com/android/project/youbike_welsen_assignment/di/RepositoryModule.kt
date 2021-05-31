@@ -5,7 +5,6 @@ import com.android.project.youbike_welsen_assignment.data.repository.YouBikeRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 
 @Module

@@ -10,5 +10,6 @@ data class YouBikeResp(
     @SerializedName("sbi")
     val remainBikes: String? = null,
     @SerializedName("mday")
-    val date: String? = null
+    val date: String? = null,
+    val sno: String? = null
 )
