@@ -8,7 +8,15 @@ import javax.inject.Inject
 class YouBikeRepository @Inject constructor(
     private val youBikeRemoteDataSource: YouBikeRemoteDataSource
 ) : IYouBikeRepository {
-    override fun getYouBikeInform(): Single<List<YouBikeResp>> {
-        return youBikeRemoteDataSource.getYouBikeInform()
+    override fun getYouBikeInform(): Single<DataResult<List<YouBikeResp>>> {
+        return youBikeRemoteDataSource.getYouBikeInform().mapToResult()
+    }
+
+    private fun <T> Single<T>.mapToResult(): Single<DataResult<T>> {
+        return map<DataResult<T>> {
+            DataResult.Success(it)
+        }.onErrorReturn {
+            DataResult.Failure()
+        }
     }
 }
