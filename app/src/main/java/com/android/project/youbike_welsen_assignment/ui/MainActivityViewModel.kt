@@ -20,7 +20,6 @@ class MainActivityViewModel @Inject constructor(
 
     fun getData() {
         youBikeRepository.getYouBikeInform().subscribeBy { data ->
-            //date.sortedBy { it.date }
             youBikeData.postValue(data.sortedByDescending { it.date })
         }
     }

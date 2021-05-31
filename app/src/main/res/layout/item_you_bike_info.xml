@@ -7,8 +7,8 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="8dp"
-    app:cardElevation="12dp"
-    app:cardCornerRadius="12dp">
+    app:cardCornerRadius="12dp"
+    app:cardElevation="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tv_item_youBike_total"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_total"
@@ -111,12 +111,12 @@
             android:id="@+id/tv_item_youBike_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="16dp"
             android:text="@string/youBike_date"
             android:textColor="@color/gray"
             android:textSize="13sp"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_item_youBike_location_value"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_youBike_location_value" />
